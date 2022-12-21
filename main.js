@@ -21,12 +21,12 @@ else {
 if ((results[0].confidence> 0.5) && (previous_results != results[0].label)) {
   console.log(results);
 previous_results = results[0].label;
-var synth = window.SpeechSynthesis;
+var synth = window.speechSynthesis;
 var speak_data = 'Object Detected Is -' + results[0].label;
 var utterThis = new SpeechSynthesisUtterance(speak_data);
 synth.speak(utterThis);
 document.getElementById("result_object_name").innerHTML = results[0].label;
-document.getElementById("result_object_accuracy").innerHTML = results[0].confidence.toFized(3);
+document.getElementById("result_object_accuracy").innerHTML = results[0].confidence.toFixed(3);
 }
 }
 }
